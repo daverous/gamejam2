@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject player;
 	CharacterController controller;
 	public float MAX_SIZE = 10F;
-	public float MIN_SIZE = 0.5F;
+	public float MIN_SIZE = 2F;
 
 	public float speed;
 
@@ -31,8 +31,8 @@ public class PlayerScript : MonoBehaviour {
 		if (!rigidbody.IsSleeping()) {
 			if (size.x < MAX_SIZE && size.z < MAX_SIZE && size.y < MAX_SIZE)
 			{
-				size += new Vector3(0.001F, 0.001F, 0.001F);
-				Debug.Log(size.x);
+				size += new Vector3(0.003F, 0.003F, 0.003F);
+				//Debug.Log(size.x);
 				player.transform.localScale = size;
 				
 				
@@ -40,22 +40,51 @@ public class PlayerScript : MonoBehaviour {
 			}
 		}
 	}
-	
-	
-	void OnControllerColliderHit(ControllerColliderHit collider)
+
+
+    void OnTriggerEnter(Collider other)
 	{
-		if (collider.collider.gameObject.tag == "Finish")
+        Debug.Log("HERE");
+		if (other.gameObject.tag == "Enemy_S")
 		{
 			Debug.Log("Player collided with enemy.");
 			
-			size -= new Vector3(0.5F, 0.5F, 0.5F);
+			size -= new Vector3(1F, 1F, 1F);
 			if (size.x < MIN_SIZE)
 			{
-				Debug.Log("GameOVER");
+                Application.Quit();
 			}
 			player.transform.localScale = size;
 			controller.center = player.transform.position;
 			
 		}
+        else if (other.gameObject.tag == "Enemy_M")
+        {
+            Debug.Log("Player collided with enemy.");
+
+            size -= new Vector3(2F, 2F, 2F);
+            if (size.x < MIN_SIZE)
+            {
+                Application.Quit();
+            }
+            player.transform.localScale = size;
+            controller.center = player.transform.position;
+
+        }
+
+        else if (other.gameObject.tag == "Enemy_L")
+        {
+            Debug.Log("Player collided with enemy.");
+
+            size -= new Vector3(3F, 3F, 3F);
+            if (size.x < MIN_SIZE)
+            {
+                Application.Quit();
+            }
+            player.transform.localScale = size;
+            controller.center = player.transform.position;
+
+        }
+
 	}
 }
