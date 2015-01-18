@@ -9,12 +9,12 @@ public class PlayerScript : MonoBehaviour {
 	CharacterController controller;
 	public float MAX_SIZE = 10F;
 	public float MIN_SIZE = 2F;
-
 	public float speed;
 
 	void Start () {
 		size = player.transform.localScale;
 		controller = this.GetComponent<CharacterController>();
+        
 	}
 	
 	// Update is called once per frame
@@ -85,6 +85,8 @@ public class PlayerScript : MonoBehaviour {
             controller.center = player.transform.position;
 
         }
+        GameObject score = GameObject.FindWithTag("Score");
+        score.GetComponent<ScoreScript>().increaseScore();
 
 	}
 }

@@ -54,6 +54,7 @@
      <Compile Include="Assets\PlayerScriptObject.cs" />
      <Compile Include="Assets\Prefabs\FlameBobbing.cs" />
      <Compile Include="Assets\Prefabs\FlameLook.cs" />
+     <Compile Include="Assets\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Snowflake.cs" />
      <Compile Include="Assets\Scripts\SnowflakeManager.cs" />
