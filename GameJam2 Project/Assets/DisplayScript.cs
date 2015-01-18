@@ -9,7 +9,8 @@ public class DisplayScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        score = GameObject.Find("Score").GetComponent<ScoreScript>().getScore();
+
+        score = ScoreScript.getScore();
         GetComponent<Text>().text = "Your Score is: " + score.ToString();
 
     }
