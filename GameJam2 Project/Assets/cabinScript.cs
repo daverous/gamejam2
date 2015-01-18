@@ -13,29 +13,29 @@ public class cabinScript : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag!= "Player")
-            Debug.Log("HOUSE HAS BEEN HIT!");
-        if (other.gameObject.tag == "Enemy_S")
-        {
-            Application.LoadLevel("GameOver");
-    
-        }
-        else if (other.gameObject.tag == "Enemy_M")
-        {
-
-            Application.LoadLevel("GameOver");
-            }
-
-        
-
-        else if (other.gameObject.tag == "Enemy_L")
-        {
-
-            Application.LoadLevel("GameOver");
-            }
-           
-
-    }
+//    void OnTriggerEnter(Collider other)
+//    {
+//        if (other.gameObject.tag!= "Player")
+//            Debug.Log("HOUSE HAS BEEN HIT!");
+//        if (other.gameObject.tag == "Enemy_S")
+//        {
+//            Application.LoadLevel("GameOver");
+//    
+//        }
+//        else if (other.gameObject.tag == "Enemy_M")
+//        {
+//
+//            Application.LoadLevel("GameOver");
+//            }
+//
+//        
+//
+//        else if (other.gameObject.tag == "Enemy_L")
+//        {
+//
+//            Application.LoadLevel("GameOver");
+//            }
+//           
+//
+//    }
 }

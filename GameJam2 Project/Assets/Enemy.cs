@@ -26,12 +26,11 @@ public class Enemy : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player")
 		{
-         
 			Destroy(gameObject);
 		}
-
-        if (other.gameObject.tag == "House")
+        else if (other.gameObject.tag == "House")
         {
+			Destroy(gameObject);
             Debug.Log("GOOOD1");
             Application.LoadLevel("GameOver");
         }
