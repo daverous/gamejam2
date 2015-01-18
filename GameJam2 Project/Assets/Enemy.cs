@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour {
 
         if (other.gameObject.tag == "House")
         {
-            Debug.Log("Enemy collided with house");
-            //FindObjectOfType<GameManager>().GoToGameOverScreen("The flame sprites ate your brains!");
+            Debug.Log("GOOOD1");
+            Application.LoadLevel("GameOver");
         }
 	}
 

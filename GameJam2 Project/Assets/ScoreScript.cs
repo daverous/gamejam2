@@ -9,7 +9,7 @@ public class ScoreScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         instruction = GetComponent<Text>();
-        score = 1;
+        score = 0;
 	}
 	
 	// Update is called once per frame
@@ -20,5 +20,9 @@ public class ScoreScript : MonoBehaviour {
     public void increaseScore()
     {
         score++;
+    }
+    public int getScore()
+    {
+        return score;
     }
 }

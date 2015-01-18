@@ -44,15 +44,18 @@ public class PlayerScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
 	{
-        Debug.Log("HERE");
-		if (other.gameObject.tag == "Enemy_S")
+        if (other.gameObject.tag == "House")
+        {
+            return;
+        }
+		else if (other.gameObject.tag == "Enemy_S")
 		{
 			Debug.Log("Player collided with enemy.");
 			
 			size -= new Vector3(1F, 1F, 1F);
 			if (size.x < MIN_SIZE)
 			{
-                Application.Quit();
+                Application.LoadLevel("GameOver");
 			}
 			player.transform.localScale = size;
 			controller.center = player.transform.position;
@@ -65,7 +68,7 @@ public class PlayerScript : MonoBehaviour {
             size -= new Vector3(2F, 2F, 2F);
             if (size.x < MIN_SIZE)
             {
-                Application.Quit();
+                Application.LoadLevel("GameOver");
             }
             player.transform.localScale = size;
             controller.center = player.transform.position;
@@ -79,7 +82,7 @@ public class PlayerScript : MonoBehaviour {
             size -= new Vector3(3F, 3F, 3F);
             if (size.x < MIN_SIZE)
             {
-                Application.Quit();
+                Application.LoadLevel("GameOver");
             }
             player.transform.localScale = size;
             controller.center = player.transform.position;

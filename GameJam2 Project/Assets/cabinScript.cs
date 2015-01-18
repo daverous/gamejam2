@@ -15,24 +15,25 @@ public class cabinScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HOUSE HAS BEEN HIT!");
+        if (other.gameObject.tag!= "Player")
+            Debug.Log("HOUSE HAS BEEN HIT!");
         if (other.gameObject.tag == "Enemy_S")
         {
-                Application.Quit();
+            Application.LoadLevel("GameOver");
     
         }
         else if (other.gameObject.tag == "Enemy_M")
         {
 
-                Application.Quit();
+            Application.LoadLevel("GameOver");
             }
 
         
 
         else if (other.gameObject.tag == "Enemy_L")
         {
-            
-                Application.Quit();
+
+            Application.LoadLevel("GameOver");
             }
            
 
